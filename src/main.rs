@@ -93,6 +93,8 @@ fn main() {
         println!("Renata's Computer: done!");
     });
 
+    println!("Renata's Computer: hey hey!");
+    
     drop(spawner);
 
     executor.run();
