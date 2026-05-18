@@ -92,10 +92,24 @@ fn main() {
 
         println!("Renata's Computer: done!");
     });
+    spawner.spawn(async {
+        println!("Renata's Computer: howdy2!");
+
+        TimerFuture::new(Duration::new(2, 0)).await;
+
+        println!("Renata's Computer: done2!");
+    });
+    spawner.spawn(async {
+        println!("Renata's Computer: howdy3!");
+
+        TimerFuture::new(Duration::new(2, 0)).await;
+
+        println!("Renata's Computer: done3!");
+    });
 
     println!("Renata's Computer: hey hey!");
     
-    drop(spawner);
+    // drop(spawner);
 
     executor.run();
 }
